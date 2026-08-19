@@ -1,4 +1,5 @@
 aid: mutual-of-america-life-insurance
+specificationVersion: '0.23'
 accessModel:
   pricing: unknown
   onboarding: unknown
