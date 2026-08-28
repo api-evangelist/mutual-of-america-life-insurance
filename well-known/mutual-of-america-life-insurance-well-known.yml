@@ -1,0 +1,99 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  Direct HTTP probe of the /.well-known/ discovery surface on every host Mutual of America
+  serves (2026-08-28). Mutual of America publishes no baseURL and no OpenAPI, so the host set
+  was derived from the corporate website, the plan administration portal and the customer
+  identity host.
+note: >-
+  Two real documents were retrieved, both on login.mutualofamerica.com — the company's
+  OpenID Connect and OAuth 2.0 authorization-server metadata. That host is an Okta Customer
+  Identity tenant running on a Mutual of America custom domain (issuer is
+  https://login.mutualofamerica.com), so the documents are served by a host the company
+  controls. It is a workforce/customer sign-in surface for the retirement plan portal, NOT a
+  public API. The corporate site (www.mutualofamerica.com, Optimizely/EPiServer CMS) returns a
+  clean HTML 404 for every /.well-known/ path. sponsor.mutualofamerica.com sits behind an
+  Imperva "Pardon Our Interruption" bot interstitial that answers HTTP 200 with a 6,183-byte
+  HTML challenge page for EVERY path probed — those 200s are recorded below as soft-200
+  challenges and are explicitly NOT documents.
+hit_count: 2
+soft_404_control:
+  host: https://www.mutualofamerica.com
+  path: /.well-known/this-path-does-not-exist-ae-control
+  status: 404
+  bytes: 18076
+  note: >-
+    The corporate host returns a genuine 404 status with its branded 18,076-byte error page,
+    so the 404s recorded below are true negatives rather than a catch-all.
+soft_200_control:
+  host: https://sponsor.mutualofamerica.com
+  status: 200
+  bytes: 6183
+  content_type: text/html; charset=UTF-8
+  body_marker: 'Pardon Our Interruption'
+  note: >-
+    Imperva bot-mitigation interstitial. Returns the identical 200/HTML body for
+    /.well-known/agent-card.json, /.well-known/agent.json, /openapi.json and /swagger.json.
+    Rejected as a false positive; no document was saved and no pointer emitted from this host.
+hosts:
+  - host: https://login.mutualofamerica.com
+    role: Customer identity / single sign-on (Okta CIAM on a Mutual of America custom domain)
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        content_type: application/json
+        file: mutual-of-america-life-insurance-openid-configuration.json
+        note: OpenID Connect Discovery 1.0 metadata; issuer https://login.mutualofamerica.com
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: application/json
+        file: mutual-of-america-life-insurance-oauth-authorization-server.json
+        note: RFC 8414 OAuth 2.0 Authorization Server Metadata
+      - path: /.well-known/security.txt
+        status: 405
+      - path: /.well-known/api-catalog
+        status: 405
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://www.mutualofamerica.com
+    role: Corporate website and product marketing (Optimizely/EPiServer CMS)
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://sponsor.mutualofamerica.com
+    role: Plan Administration Portal for employers (SponsorConnect); credentialed
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 200
+        soft_200: true
+        note: Imperva bot interstitial HTML, not a document. Rejected.
+      - path: /.well-known/agent.json
+        status: 200
+        soft_200: true
+        note: Imperva bot interstitial HTML, not a document. Rejected.

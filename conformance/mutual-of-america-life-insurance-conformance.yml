@@ -1,0 +1,112 @@
+generated: '2026-08-28'
+method: probed
+source: >-
+  well-known/mutual-of-america-life-insurance-openid-configuration.json and
+  well-known/mutual-of-america-life-insurance-oauth-authorization-server.json, both fetched
+  from https://login.mutualofamerica.com on 2026-08-28.
+scope_of_this_artifact: >-
+  Mutual of America publishes no API contract, so nothing here is derived from an OpenAPI.
+  Every `conforms: true` below is evidenced by a field in one of the two discovery documents
+  the company actually serves. Everything else is recorded as not found, with the probe that
+  established the absence.
+standards:
+  - id: oidc
+    name: OpenID Connect Discovery 1.0
+    conforms: true
+    evidence: >-
+      HTTP 200 application/json at
+      https://login.mutualofamerica.com/.well-known/openid-configuration with issuer,
+      authorization_endpoint, token_endpoint, userinfo_endpoint, jwks_uri and
+      id_token_signing_alg_values_supported [RS256].
+  - id: oauth2
+    name: OAuth 2.0
+    conforms: true
+    evidence: >-
+      authorization_endpoint / token_endpoint / grant_types_supported advertised by both
+      discovery documents.
+  - id: rfc8414
+    name: OAuth 2.0 Authorization Server Metadata (RFC 8414)
+    conforms: true
+    evidence: >-
+      HTTP 200 application/json at
+      https://login.mutualofamerica.com/.well-known/oauth-authorization-server.
+  - id: rfc7636
+    name: PKCE (RFC 7636)
+    conforms: true
+    evidence: 'code_challenge_methods_supported: ["S256"] — S256 only, `plain` not offered.'
+  - id: rfc9126
+    name: Pushed Authorization Requests (RFC 9126)
+    conforms: true
+    evidence: >-
+      pushed_authorization_request_endpoint =
+      https://login.mutualofamerica.com/oauth2/v1/par
+  - id: rfc9449
+    name: OAuth 2.0 Demonstrating Proof of Possession — DPoP (RFC 9449)
+    conforms: true
+    evidence: >-
+      dpop_signing_alg_values_supported [RS256, RS384, RS512, ES256, ES384, ES512]
+  - id: rfc8628
+    name: OAuth 2.0 Device Authorization Grant (RFC 8628)
+    conforms: true
+    evidence: >-
+      device_authorization_endpoint and grant type
+      urn:ietf:params:oauth:grant-type:device_code
+  - id: ciba
+    name: OpenID Connect Client-Initiated Backchannel Authentication
+    conforms: true
+    evidence: >-
+      grant type urn:openid:params:grant-type:ciba and
+      backchannel_token_delivery_modes_supported ["poll"]
+  - id: rfc7591
+    name: OAuth 2.0 Dynamic Client Registration (RFC 7591)
+    conforms: true
+    evidence: 'registration_endpoint = https://login.mutualofamerica.com/oauth2/v1/clients'
+  - id: rfc9116
+    name: security.txt (RFC 9116)
+    conforms: false
+    evidence: >-
+      HTTP 404 at https://www.mutualofamerica.com/.well-known/security.txt (a true 404 —
+      the host answers 404 for an invented control path with the same 18,076-byte error page).
+  - id: rfc9457
+    name: Problem Details for HTTP APIs (RFC 9457)
+    conforms: false
+    evidence: No API contract or error reference is published, so no error format is declared.
+  - id: fapi
+    name: FAPI 1.0 / FAPI 2.0
+    conforms: false
+    evidence: >-
+      Not claimed anywhere and not evidenced by the metadata — mutual-TLS client
+      authentication and mtls_endpoint_aliases are absent, and the deprecated `implicit` and
+      `password` grants remain advertised, both of which FAPI profiles forbid.
+  - id: oauth-protected-resource
+    name: OAuth 2.0 Protected Resource Metadata (RFC 9728)
+    conforms: false
+    evidence: No protected-resource metadata document is served on any Mutual of America host.
+domain_standards:
+  regime: insurance
+  regime_shortlist_probed:
+    - acord
+    - acord-al3
+    - acord-xml
+    - ngds
+    - grlc
+    - cieca-bms
+    - csio
+    - market-reform-contract
+  additional_probed:
+    - spark-institute-data-layout (SPARK Files)
+    - limra-ldex
+  found: none
+  evidence: >-
+    No Mutual of America page, and no document it serves, declares conformance to any
+    insurance or retirement-plan data-exchange standard. The payroll integration page
+    (https://www.mutualofamerica.com/employers/services/payroll-integration, HTTP 200)
+    describes a "Premier" and a "Standard" payroll file transfer process in prose and names
+    no standard, no file layout, and no API. This is a REWARD-ONLY dimension: recorded as not
+    found rather than as a failure.
+compliance_certifications:
+  found: none
+  evidence: >-
+    probe-security-programs.py returned vdp=none trust=none on 2026-08-28. No trust center,
+    no SOC 2 / ISO 27001 / PCI / HIPAA / FedRAMP attestation page, and no
+    /.well-known/security.txt is served.

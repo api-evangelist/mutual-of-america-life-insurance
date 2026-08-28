@@ -1,0 +1,86 @@
+generated: '2026-08-28'
+method: probed
+source: https://login.mutualofamerica.com/.well-known/openid-configuration
+scope_of_this_artifact: >-
+  This describes the ONLY authorization surface Mutual of America publishes machine-readable
+  metadata for: the customer/plan-participant identity host at login.mutualofamerica.com. It is
+  NOT a public API authentication profile — Mutual of America publishes no developer program,
+  no API reference and no OpenAPI, so there are no securitySchemes to derive from a contract.
+  Everything below was read directly from the two discovery documents saved under well-known/.
+provider_hosts:
+  - host: login.mutualofamerica.com
+    platform: Okta Customer Identity (custom domain; issuer matches the host)
+    verified: probed
+schemes:
+  - key: openIdConnect
+    type: openIdConnect
+    openIdConnectUrl: https://login.mutualofamerica.com/.well-known/openid-configuration
+    issuer: https://login.mutualofamerica.com
+    description: >-
+      OpenID Connect Discovery 1.0. Sign-in for employees, individuals and plan sponsors
+      reaching the retirement plan portal.
+  - key: oauth2
+    type: oauth2
+    metadata: https://login.mutualofamerica.com/.well-known/oauth-authorization-server
+    description: RFC 8414 OAuth 2.0 Authorization Server Metadata for the same issuer.
+    flows:
+      authorizationCode:
+        authorizationUrl: https://login.mutualofamerica.com/oauth2/v1/authorize
+        tokenUrl: https://login.mutualofamerica.com/oauth2/v1/token
+        refreshUrl: https://login.mutualofamerica.com/oauth2/v1/token
+      clientCredentials:
+        tokenUrl: https://login.mutualofamerica.com/oauth2/v1/token
+        note: >-
+          client_credentials is advertised by the OAuth 2.0 authorization-server metadata only,
+          not by the OpenID Connect document.
+      implicit:
+        authorizationUrl: https://login.mutualofamerica.com/oauth2/v1/authorize
+        note: Advertised but legacy; authorization code with PKCE is the modern path.
+endpoints:
+  authorization: https://login.mutualofamerica.com/oauth2/v1/authorize
+  token: https://login.mutualofamerica.com/oauth2/v1/token
+  userinfo: https://login.mutualofamerica.com/oauth2/v1/userinfo
+  jwks: https://login.mutualofamerica.com/oauth2/v1/keys
+  introspection: https://login.mutualofamerica.com/oauth2/v1/introspect
+  revocation: https://login.mutualofamerica.com/oauth2/v1/revoke
+  end_session: https://login.mutualofamerica.com/oauth2/v1/logout
+  device_authorization: https://login.mutualofamerica.com/oauth2/v1/device/authorize
+  pushed_authorization_request: https://login.mutualofamerica.com/oauth2/v1/par
+  dynamic_client_registration: https://login.mutualofamerica.com/oauth2/v1/clients
+grant_types_supported:
+  - authorization_code
+  - implicit
+  - refresh_token
+  - password
+  - client_credentials
+  - 'urn:ietf:params:oauth:grant-type:device_code'
+  - 'urn:openid:params:grant-type:ciba'
+client_authentication_methods:
+  - client_secret_basic
+  - client_secret_post
+  - client_secret_jwt
+  - private_key_jwt
+  - none
+token_security:
+  pkce: true
+  code_challenge_methods: [S256]
+  par_supported: true
+  dpop_supported: true
+  dpop_signing_algs: [RS256, RS384, RS512, ES256, ES384, ES512]
+  id_token_signing_algs: [RS256]
+  id_token_encryption_algs: [RSA-OAEP-256, RSA-OAEP-384, RSA-OAEP-512]
+  request_object_supported: true
+  mtls_supported: false
+  note: >-
+    PKCE is advertised with S256 only (no `plain`), pushed authorization requests are
+    supported, and DPoP sender-constrained tokens are available — a modern posture for the
+    sign-in surface. The `password` and `implicit` grants remain advertised, which is the one
+    weak signal here.
+api_keys: none-published
+mutual_tls: not-advertised
+docs: null
+docs_note: >-
+  Mutual of America publishes no developer authentication documentation. Probed and confirmed
+  absent on 2026-08-28: www.mutualofamerica.com returns HTTP 404 for /openapi.json,
+  /swagger.json, /api-docs, /docs, /graphql and /llms.txt, and developer., api. and
+  docs.mutualofamerica.com do not resolve.

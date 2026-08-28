@@ -72,4 +72,4 @@ No APIs have been documented yet. Check back for updates.
 
 ## Properties
 
-- [Website](https://www.mutual-of-america-life-insurance.com)
+- [Website](https://www.mutualofamerica.com)

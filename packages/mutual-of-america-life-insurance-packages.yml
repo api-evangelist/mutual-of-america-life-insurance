@@ -1,0 +1,28 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  Registry and repository search on 2026-08-28 — registry.npmjs.org search (0 results),
+  pypi.org/pypi/mutualofamerica/json (HTTP 404), rubygems.org search API (empty array),
+  GitHub org lookup for mutualofamerica / mutual-of-america / MutualOfAmerica (all HTTP 404)
+  and GitHub repository search (0 matching repositories).
+package_count: 0
+packages: []
+note: >-
+  Mutual of America publishes no client libraries in any public package registry and operates
+  no public GitHub organization. There is no SDK link, CLI link or SourceCode link in apis.yml
+  to derive a candidate from, because the company ships no public API. Recorded as a verified
+  zero rather than omitted, so a later pass does not re-run the same search. No `SDKs` pointer
+  is emitted — there is no official client library to point at.
+registries_checked:
+  - registry: npm
+    endpoint: https://registry.npmjs.org/-/v1/search?text=mutualofamerica
+    result: 0 packages
+  - registry: pypi
+    endpoint: https://pypi.org/pypi/mutualofamerica/json
+    result: HTTP 404
+  - registry: rubygems
+    endpoint: https://rubygems.org/api/v1/search.json?query=mutual+of+america
+    result: empty
+  - registry: github
+    endpoint: https://api.github.com/orgs/mutualofamerica
+    result: HTTP 404 (no organization)

@@ -1,0 +1,13 @@
+generated: '2026-08-28'
+method: searched
+source: https://www.mutualofamerica.com/prospective-plan-sponsors
+plan_count: 0
+plans: []
+note: >-
+  There is no API product and therefore no API pricing. Mutual of America sells
+  employer-sponsored retirement plans and individual retirement products; plan costs are
+  quoted through a prospective-plan-sponsor conversation and a prospectus obtained by phone
+  (800.468.3785), not from a published price list. No developer plan, tier, quota or overage
+  exists to record. Verified 2026-08-28: https://www.mutualofamerica.com/prospective-plan-sponsors
+  returned HTTP 200 and carries a contact form, not pricing; no /pricing or /plans page is
+  present in the 255-URL sitemap.

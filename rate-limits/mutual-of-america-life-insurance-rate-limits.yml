@@ -1,0 +1,12 @@
+generated: '2026-08-28'
+method: searched
+source: https://www.mutualofamerica.com/sitemap.xml
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  No rate limits are documented because no API is published. The only Mutual of America
+  endpoint that answers programmatically is the OAuth 2.0 / OIDC authorization server at
+  login.mutualofamerica.com, whose discovery documents advertise no rate-limit policy and
+  return no X-RateLimit-* / RateLimit-* headers. Verified 2026-08-28 against the two
+  /.well-known/ documents saved under well-known/; recorded as an honest zero.

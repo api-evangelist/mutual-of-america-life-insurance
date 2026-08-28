@@ -15,13 +15,88 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mutual-of-america-life-insurance.png
 url: 
   https://raw.githubusercontent.com/api-evangelist/mutual-of-america-life-insurance/refs/heads/main/apis.yml
-modified: '2026-03-24'
+created: '2026-03-24'
+modified: '2026-08-28'
+maintainers:
+  - FN: API Evangelist
+    email: info@apievangelist.com
+tags:
+  - Insurance
+  - Life Insurance
+  - Retirement
+  - Financial Services
+  - Pensions
+  - Annuities
+  - Wealth Management
+  - Identity
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/mutual-of-america-life-insurance-domain-security.yml
+  - type: WellKnown
+    url: well-known/mutual-of-america-life-insurance-well-known.yml
+  - type: Authentication
+    url: authentication/mutual-of-america-life-insurance-authentication.yml
+  - type: OpenIDConnect
+    url: well-known/mutual-of-america-life-insurance-openid-configuration.json
+  - type: OAuthScopes
+    url: scopes/mutual-of-america-life-insurance-scopes.yml
+  - type: Conformance
+    url: conformance/mutual-of-america-life-insurance-conformance.yml
+  - type: LLMsTxt
+    url: llms/mutual-of-america-life-insurance-llms.txt
+  - type: Plans
+    url: plans/mutual-of-america-life-insurance-plans-pricing.yml
+  - type: Website
+    url: https://www.mutualofamerica.com
   - type: LinkedIn
     url: https://www.linkedin.com/company/mutualofamerica
-  - type: Website
-    url: https://www.mutual-of-america-life-insurance.com
+  - type: Support
+    url: https://www.mutualofamerica.com/customer-support
+  - type: Blog
+    url: https://www.mutualofamerica.com/insights-and-tools/learning-center/articles
+  - type: TermsOfService
+    url: https://www.mutualofamerica.com/legal-information
+  - type: PrivacyPolicy
+    url: https://www.mutualofamerica.com/Privacy-Page
+  - type: Login
+    url: https://login.mutualofamerica.com
 description: >-
-  Mutual of America Life Insurance Company is a mutual life insurance company that
-  provides retirement products and related services to employers, employees, and individuals.
+  Mutual of America Life Insurance Company is a mutual life insurance and retirement services
+  provider headquartered in New York City, offering employer-sponsored retirement plans —
+  401(k), 403(b), 401(a) and 457 deferred compensation — alongside individual retirement
+  products including Traditional, Roth, Rollover, Managed, Self-Select and Inherited IRAs,
+  flexible premium annuities and interest-account and investment options. It serves nonprofit,
+  business, governmental and tribal employers and their employees through a plan
+  administration portal, payroll integration services, online enrollment and salary deferral,
+  and automatic enrollment. Mutual of America publishes no public developer program, API
+  reference or machine-readable API contract; the only machine-readable discovery documents it
+  serves are the OpenID Connect and OAuth 2.0 authorization-server metadata on its customer
+  identity host, login.mutualofamerica.com.
+x-enrichment:
+  date: '2026-08-28'
+  status: minimal
+  artifacts_added: 11
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Mutual of America ships software only as an end-user product — a plan administration
+    portal, online enrollment and a mobile app — and publishes no developer program: no
+    developer/api/docs subdomain resolves, the 255-URL sitemap contains no developer or API
+    page, and the only integration it markets (Payroll Integration, "Premier" and "Standard")
+    is described in prose as a payroll file transfer with no published file layout, standard,
+    or endpoint.
+  evidence:
+    - url: https://www.mutualofamerica.com/openapi.json
+      status: 404
+    - url: https://www.mutualofamerica.com/llms.txt
+      status: 404
+    - url: https://www.mutualofamerica.com/employers/services/payroll-integration
+      status: 200
+    - url: https://api.github.com/orgs/mutualofamerica
+      status: 404
+    - url: https://login.mutualofamerica.com/.well-known/openid-configuration
+      status: 200
+  checked: '2026-08-28'
