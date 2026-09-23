@@ -1,7 +1,9 @@
 ---
 title: Mutual of America Financial Group Names Christine ...
 url: https://www.prnewswire.com/news-releases/mutual-of-america-financial-group-names-christine-janofsky-as-executive-vice-president-chief-financial-officer-302459614.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Mutual of America Life Insurance" press release artificial intelligence'
 position: 2
 source: serpapi-google

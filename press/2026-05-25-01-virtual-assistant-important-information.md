@@ -1,7 +1,9 @@
 ---
 title: Virtual Assistant Important Information
 url: https://www.mutualofamerica.com/virtual-assistant-important-information
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Mutual of America Life Insurance" press release artificial intelligence'
 position: 1
 source: serpapi-google

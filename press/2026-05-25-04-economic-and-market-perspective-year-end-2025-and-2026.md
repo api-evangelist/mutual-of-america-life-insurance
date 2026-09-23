@@ -1,7 +1,9 @@
 ---
 title: 'Economic & Market Perspective: Year-End 2025 and 2026 ...'
 url: https://www.mutualofamerica.com/insights-and-tools/learning-center/emp/economic--market-perspective-january-2026
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Mutual of America Life Insurance" press release artificial intelligence'
 position: 4
 source: serpapi-google

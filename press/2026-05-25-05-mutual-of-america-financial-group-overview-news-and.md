@@ -1,7 +1,9 @@
 ---
 title: Mutual of America Financial Group - Overview, News & ...
 url: https://www.zoominfo.com/c/mutual-of-america-life-insurance-co/71911491
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Mutual of America Life Insurance" press release artificial intelligence'
 position: 5
 source: serpapi-google
