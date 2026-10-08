@@ -52,6 +52,8 @@ tags_raw:
   - Financial-Services
 apis: []
 common:
+  - type: RateLimits
+    url: rate-limits/mutual-of-america-life-insurance-rate-limits.yml
   - type: DomainSecurity
     url: security/mutual-of-america-life-insurance-domain-security.yml
   - type: WellKnown
