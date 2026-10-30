@@ -1,4 +1,4 @@
-# Mutual of America Life Insurance
+# Mutual of America Life Insurance Company
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,12 +64,102 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-This is a repository for tracking the APIs, SDKs, and other developer resources for Mutual of America Life Insurance.
+Mutual of America Life Insurance Company is a mutual life insurance and retirement services provider headquartered in New York City, offering employer-sponsored retirement plans — 401(k), 403(b), 401(a) and 457 deferred compensation — alongside individual retirement products including Traditional, Roth, Rollover, Managed, Self-Select and Inherited IRAs, flexible premium annuities and interest-account and investment options. It serves nonprofit, business, governmental and tribal employers and their employees through a plan administration portal, payroll integration services, online enrollment and salary deferral, and automatic enrollment. Mutual of America publishes no public developer program, API reference or machine-readable API contract; the only machine-readable discovery documents it serves are the OpenID Connect and OAuth 2.0 authorization-server metadata on its customer identity host, login.mutualofamerica.com.
 
-## APIs
+**Areas:** Insurance · Life Insurance · Retirement · Financial Services · Pensions · Annuities · Wealth Management · Identity
 
-No APIs have been documented yet. Check back for updates.
+## Mutual of America Life Insurance Company on APIs.io
 
-## Properties
+Everything profiled for Mutual of America Life Insurance Company is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mutual-of-america-life-insurance/](https://apis.io/providers/mutual-of-america-life-insurance/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Mutual Of America Life Insurance Authentication](https://apis.io/security/mutual-of-america-life-insurance/mutual-of-america-life-insurance-authentication/)
+- [Mutual Of America Life Insurance Domain Security](https://apis.io/security/mutual-of-america-life-insurance/mutual-of-america-life-insurance-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Mutual Of America Life Insurance Scopes](https://apis.io/scopes/mutual-of-america-life-insurance/mutual-of-america-life-insurance-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Mutual Of America Life Insurance Plans Pricing](https://apis.io/plans/mutual-of-america-life-insurance/mutual-of-america-life-insurance-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Mutual Of America Life Insurance Rate Limits](https://apis.io/rate-limits/mutual-of-america-life-insurance/mutual-of-america-life-insurance-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.mutualofamerica.com)
+- [Support](https://www.mutualofamerica.com/customer-support)
+- [Blog](https://www.mutualofamerica.com/insights-and-tools/learning-center/articles)
+- [Terms of service](https://www.mutualofamerica.com/legal-information)
+- [Privacy policy](https://www.mutualofamerica.com/Privacy-Page)
+
+## API Evangelist rating
+
+**Kin Score 19.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 27.6 |
+
+**Agent readiness 17.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 36.8** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mutual-of-america-life-insurance/](https://apis.io/providers/mutual-of-america-life-insurance/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Mutual of America Life Insurance Company: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mutual-of-america-life-insurance/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
